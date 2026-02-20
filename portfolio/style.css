@@ -234,3 +234,39 @@ body {
 .project-card:hover {
     transform: translateY(-8px) scale(1.02);
 }
+.contact-container {
+    max-width: 500px;
+    margin: auto;
+}
+
+/* Input Group */
+.input-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Inputs */
+input, textarea {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 12px;
+    color: #e5e7eb;
+    outline: none;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+/* Focus Effect 🔥 */
+input:focus, textarea:focus {
+    border-color: rgba(56, 189, 248, 0.6);
+    box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.15);
+}
+
+/* Error Text */
+.error {
+    font-size: 12px;
+    color: #f87171;
+    margin-top: 5px;
+}
