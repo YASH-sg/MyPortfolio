@@ -1,53 +1,60 @@
-const form = document.getElementById("contactForm");
+/* ════════════════════════════════════════
+   Yash Gawande Portfolio — script.js
+   ════════════════════════════════════════ */
 
-form.addEventListener("submit", function (e) {
-
-    e.preventDefault();
-
-    let isValid = true;
-
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
-
-    const nameError = document.getElementById("nameError");
-    const emailError = document.getElementById("emailError");
-    const messageError = document.getElementById("messageError");
-
-    /* Reset errors */
-    nameError.textContent = "";
-    emailError.textContent = "";
-    messageError.textContent = "";
-
-    /* Name Validation */
-    if (name === "") {
-        nameError.textContent = "Name is required";
-        isValid = false;
+/* ── SCROLL REVEAL ── */
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      observer.unobserve(entry.target);
     }
+  });
+}, { threshold: 0.12 });
+reveals.forEach(el => observer.observe(el));
 
-    /* Email Validation */
-    if (email === "") {
-        emailError.textContent = "Email is required";
-        isValid = false;
-    } else if (!validateEmail(email)) {
-        emailError.textContent = "Enter a valid email";
-        isValid = false;
-    }
+/* ── NAVBAR SHRINK ON SCROLL ── */
+const navEl = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  navEl.style.padding = window.scrollY > 50 ? '0.9rem 4rem' : '1.4rem 4rem';
+}, { passive: true });
 
-    /* Message Validation */
-    if (message === "") {
-        messageError.textContent = "Message cannot be empty";
-        isValid = false;
-    }
+/* ── ACTIVE NAV LINK HIGHLIGHT ── */
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
 
-    if (isValid) {
-        alert("Message sent successfully!");
-        form.reset();
-    }
-});
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 120) current = s.getAttribute('id');
+  });
+  navLinks.forEach(a => {
+    a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : '';
+  });
+}, { passive: true });
 
-/* Email Validator */
-function validateEmail(email) {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
+/* ── CONTACT FORM HANDLER ── */
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submit-btn');
+
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+
+  setTimeout(() => {
+    btn.textContent = '✓ Message Sent!';
+    btn.style.background = 'transparent';
+    btn.style.color = 'var(--gold)';
+    btn.style.outline = '1px solid var(--gold)';
+    e.target.reset();
+
+    setTimeout(() => {
+      btn.textContent = 'Send Message →';
+      btn.disabled = false;
+      btn.style.background = 'var(--gold)';
+      btn.style.color = 'var(--bg)';
+      btn.style.outline = 'none';
+    }, 3000);
+  }, 1200);
 }
