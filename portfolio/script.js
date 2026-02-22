@@ -2,6 +2,36 @@
    Yash Gawande Portfolio — script.js
    ════════════════════════════════════════ */
 
+/* ── EMAIL INJECTION (bypasses Cloudflare obfuscation)
+   Split into parts so scrapers can't read it in source,
+   but JS assembles & injects at runtime — fully clickable. ── */
+(function () {
+  const u = 'yashgawande901';
+  const d = 'gmail.com';
+  const email = u + '\u0040' + d;
+  const mailto = 'mailto:' + email;
+
+  // About section pill
+  const pill = document.getElementById('email-pill');
+  if (pill) {
+    pill.href = mailto;
+    const span = document.getElementById('email-pill-text');
+    if (span) span.textContent = email;
+  }
+
+  // Contact section item
+  const contactItem = document.getElementById('email-contact-item');
+  if (contactItem) {
+    contactItem.href = mailto;
+    const val = document.getElementById('email-contact-value');
+    if (val) val.textContent = email;
+  }
+
+  // Footer link
+  const footerEmail = document.getElementById('footer-email');
+  if (footerEmail) footerEmail.href = mailto;
+})();
+
 /* ── SCROLL REVEAL ── */
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
@@ -14,10 +44,10 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 reveals.forEach(el => observer.observe(el));
 
-/* ── NAVBAR SHRINK ON SCROLL ── */
+/* ── NAVBAR SHRINK ON SCROLL (CSS class toggle) ── */
 const navEl = document.querySelector('nav');
 window.addEventListener('scroll', () => {
-  navEl.style.padding = window.scrollY > 50 ? '0.9rem 4rem' : '1.4rem 4rem';
+  navEl.classList.toggle('nav-shrink', window.scrollY > 50);
 }, { passive: true });
 
 /* ── ACTIVE NAV LINK HIGHLIGHT ── */
@@ -39,18 +69,18 @@ function handleSubmit(e) {
   e.preventDefault();
   const btn = document.getElementById('submit-btn');
 
-  btn.textContent = 'Sending…';
+  btn.textContent = 'Sending\u2026';
   btn.disabled = true;
 
   setTimeout(() => {
-    btn.textContent = '✓ Message Sent!';
+    btn.textContent = '\u2713 Message Sent!';
     btn.style.background = 'transparent';
     btn.style.color = 'var(--gold)';
     btn.style.outline = '1px solid var(--gold)';
     e.target.reset();
 
     setTimeout(() => {
-      btn.textContent = 'Send Message →';
+      btn.textContent = 'Send Message \u2192';
       btn.disabled = false;
       btn.style.background = 'var(--gold)';
       btn.style.color = 'var(--bg)';

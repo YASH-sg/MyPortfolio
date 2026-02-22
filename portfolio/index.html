@@ -4,6 +4,20 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Yash Gawande — Software Developer</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Yash Gawande — Software Developer specialising in Android development, secure applications, and full-stack systems."/>
+  <meta name="keywords" content="Yash Gawande, Software Developer, Android Developer, Kotlin Developer, Portfolio"/>
+  <meta name="author" content="Yash Gawande"/>
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Yash Gawande — Software Developer"/>
+  <meta property="og:description" content="Building apps that protect and scale."/>
+  <meta property="og:type" content="website"/>
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.png"/>
+
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
@@ -38,6 +52,14 @@
     <div class="hero-actions">
       <a href="#projects" class="btn btn-primary">View my work →</a>
       <a href="#contact" class="btn btn-ghost">Let's talk</a>
+      <a href="assets/Yash_Gawande_Resume.pdf" download class="btn btn-resume">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Resume
+      </a>
     </div>
   </div>
   <div class="hero-right reveal">
@@ -77,15 +99,16 @@
       Beyond mobile, I've designed decentralised systems (AuthenChain), bias-auditing platforms (FairSight), and am comfortable across the full stack — from React frontends to Node.js backends and smart contracts.
     </p>
     <div class="about-contacts">
-      <a href="mailto:yashgawande901@gmail.com" class="contact-pill">
+      <!-- Email built by JS to bypass Cloudflare scraper — see script.js -->
+      <a id="email-pill" href="#" class="contact-pill">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        yashgawande901@gmail.com
+        <span id="email-pill-text">yashgawande901&#64;gmail.com</span>
       </a>
-      <a href="https://github.com/YASH-sg" target="_blank" class="contact-pill">
+      <a href="https://github.com/YASH-sg" target="_blank" rel="noopener" class="contact-pill">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
         github.com/YASH-sg
       </a>
-      <a href="https://linkedin.com/in/yashgawande" target="_blank" class="contact-pill">
+      <a href="https://linkedin.com/in/yashgawande" target="_blank" rel="noopener" class="contact-pill">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         LinkedIn
       </a>
@@ -236,7 +259,7 @@
       </div>
     </div>
     <div>
-      <div class="skill-group-title">Tools & Technologies</div>
+      <div class="skill-group-title">Tools &amp; Technologies</div>
       <div class="skill-cluster">
         <div class="skill-cluster-name">Languages</div>
         <div class="skill-tags">
@@ -248,7 +271,7 @@
         </div>
       </div>
       <div class="skill-cluster">
-        <div class="skill-cluster-name">Backend & Data</div>
+        <div class="skill-cluster-name">Backend &amp; Data</div>
         <div class="skill-tags">
           <span class="skill-tag">Firebase</span>
           <span class="skill-tag">REST APIs</span>
@@ -306,7 +329,7 @@
     </div>
     <div class="cert-card reveal">
       
-      <div class="cert-name">Data Science & Machine Learning with Python</div>
+      <div class="cert-name">Data Science &amp; Machine Learning with Python</div>
       <div class="cert-issuer">Udemy</div>
       <div class="cert-date">Self-paced</div>
     </div>
@@ -320,7 +343,7 @@
 </section>
 
 <!-- ══ CONTACT ══ -->
-<section id="contact" style="padding:0;">
+<section id="contact">
   <div class="contact-left">
     <div class="section-label">Get in Touch</div>
     <h2 class="contact-headline">Let's build<br/> something <em>great</em><br/> together.</h2>
@@ -328,16 +351,17 @@
       I'm actively looking for full-time roles and internships starting 2026. Whether it's Android development, full-stack projects, or something in between — I'd love to hear from you.
     </p>
     <div class="contact-list">
-      <a href="mailto:yashgawande901@gmail.com" class="contact-item">
+      <!-- Email link set by JS to bypass Cloudflare obfuscation -->
+      <a id="email-contact-item" href="#" class="contact-item">
         <div class="contact-item-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </div>
         <div>
           <div class="contact-item-label">Email</div>
-          <div class="contact-item-value">yashgawande901@gmail.com</div>
+          <div class="contact-item-value" id="email-contact-value">yashgawande901&#64;gmail.com</div>
         </div>
       </a>
-      <a href="https://github.com/YASH-sg" target="_blank" class="contact-item">
+      <a href="https://github.com/YASH-sg" target="_blank" rel="noopener" class="contact-item">
         <div class="contact-item-icon">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
         </div>
@@ -346,13 +370,27 @@
           <div class="contact-item-value">github.com/YASH-sg</div>
         </div>
       </a>
-      <a href="https://linkedin.com/in/yashgawande" target="_blank" class="contact-item">
+      <a href="https://linkedin.com/in/yashgawande" target="_blank" rel="noopener" class="contact-item">
         <div class="contact-item-icon">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </div>
         <div>
           <div class="contact-item-label">LinkedIn</div>
           <div class="contact-item-value">linkedin.com/in/yashgawande</div>
+        </div>
+      </a>
+      <!-- Resume Download in Contact Section -->
+      <a href="assets/Yash_Gawande_Resume.pdf" download class="contact-item resume-download-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+        </div>
+        <div>
+          <div class="contact-item-label">Resume</div>
+          <div class="contact-item-value">Download PDF</div>
         </div>
       </a>
     </div>
@@ -362,19 +400,19 @@
     <form class="contact-form" onsubmit="handleSubmit(event)">
       <div class="form-group">
         <label class="form-label" for="name">Name</label>
-        <input id="name" class="form-input" type="text" placeholder="Your name" required/>
+        <input id="name" class="form-input" type="text" placeholder="Your name" aria-label="Name" required/>
       </div>
       <div class="form-group">
         <label class="form-label" for="email">Email</label>
-        <input id="email" class="form-input" type="email" placeholder="your@email.com" required/>
+        <input id="email" class="form-input" type="email" placeholder="your@email.com" aria-label="Email address" required/>
       </div>
       <div class="form-group">
         <label class="form-label" for="subject">Subject</label>
-        <input id="subject" class="form-input" type="text" placeholder="What's this about?"/>
+        <input id="subject" class="form-input" type="text" placeholder="What's this about?" aria-label="Subject"/>
       </div>
       <div class="form-group">
         <label class="form-label" for="message">Message</label>
-        <textarea id="message" class="form-textarea" placeholder="Tell me about your project or opportunity..." required></textarea>
+        <textarea id="message" class="form-textarea" placeholder="Tell me about your project or opportunity..." aria-label="Message" required></textarea>
       </div>
       <button type="submit" class="form-submit" id="submit-btn">Send Message →</button>
     </form>
@@ -385,9 +423,10 @@
 <footer>
   <span>© 2025 Yash Gawande. Crafted with precision.</span>
   <span>
-    <a href="mailto:yashgawande901@gmail.com">Email</a> &nbsp;·&nbsp;
-    <a href="https://github.com/YASH-sg" target="_blank">GitHub</a> &nbsp;·&nbsp;
-    <a href="https://linkedin.com/in/yashgawande" target="_blank">LinkedIn</a>
+    <a id="footer-email" href="#">Email</a> &nbsp;·&nbsp;
+    <a href="https://github.com/YASH-sg" target="_blank" rel="noopener">GitHub</a> &nbsp;·&nbsp;
+    <a href="https://linkedin.com/in/yashgawande" target="_blank" rel="noopener">LinkedIn</a> &nbsp;·&nbsp;
+    <a href="assets/Yash_Gawande_Resume.pdf" download>Resume ↓</a>
   </span>
 </footer>
 
