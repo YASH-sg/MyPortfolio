@@ -64,27 +64,22 @@ window.addEventListener('scroll', () => {
   });
 }, { passive: true });
 
-/* ── CONTACT FORM HANDLER ── */
 function handleSubmit(e) {
   e.preventDefault();
-  const btn = document.getElementById('submit-btn');
 
-  btn.textContent = 'Sending\u2026';
-  btn.disabled = true;
+  const params = {
+    from_name: document.getElementById("name").value,
+    from_email: document.getElementById("email").value,
+    subject: document.getElementById("subject").value,
+    message: document.getElementById("message").value
+  };
 
-  setTimeout(() => {
-    btn.textContent = '\u2713 Message Sent!';
-    btn.style.background = 'transparent';
-    btn.style.color = 'var(--gold)';
-    btn.style.outline = '1px solid var(--gold)';
-    e.target.reset();
-
-    setTimeout(() => {
-      btn.textContent = 'Send Message \u2192';
-      btn.disabled = false;
-      btn.style.background = 'var(--gold)';
-      btn.style.color = 'var(--bg)';
-      btn.style.outline = 'none';
-    }, 3000);
-  }, 1200);
+  emailjs.send("service_2gr651r","template_301cl3f",params)
+    .then(function() {
+      alert("Message sent successfully!");
+      e.target.reset();
+    }, function(error) {
+      alert("Failed to send message.");
+      console.log(error);
+    });
 }
