@@ -29,6 +29,12 @@ body {
   font-size: 16px;
   line-height: 1.65;
   overflow-x: hidden;
+  animation: pageFade 0.6s ease-in-out;
+}
+
+@keyframes pageFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 /* ── NOISE OVERLAY ── */
@@ -49,7 +55,10 @@ nav {
   background: rgba(11,12,15,0.85);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--subtle);
-  transition: padding 0.3s;
+  transition: all 0.3s ease;
+}
+nav.nav-shrink {
+  padding: 0.9rem 4rem;
 }
 .nav-logo {
   font-family: var(--mono);
@@ -155,6 +164,16 @@ nav {
   border-color: var(--gold);
   color: var(--gold);
 }
+.btn-resume {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold-border);
+  gap: 0.45rem;
+}
+.btn-resume:hover {
+  background: var(--gold-dim);
+  border-color: var(--gold);
+}
 .hero-right {
   display: flex; flex-direction: column; justify-content: center;
   padding-left: 4rem;
@@ -207,6 +226,7 @@ nav {
 /* ── SECTION BASE ── */
 section {
   padding: 6rem 4rem;
+  scroll-margin-top: 80px;
 }
 .section-label {
   font-family: var(--mono);
@@ -372,7 +392,7 @@ section {
   padding: 2.5rem;
   position: relative;
   overflow: hidden;
-  cursor: default;
+  cursor: pointer;
   transition: background 0.25s;
 }
 .project-card::before {
@@ -517,6 +537,7 @@ section {
   gap: 0;
   min-height: 60vh;
   align-items: stretch;
+  padding: 0;
 }
 .contact-left {
   padding: 5rem 4rem;
@@ -551,6 +572,32 @@ section {
 .contact-item:hover {
   border-color: var(--gold-border);
   background: var(--gold-dim);
+}
+.resume-download-item {
+  border-color: var(--gold-border);
+}
+.resume-download-item .contact-item-icon {
+  background: var(--gold-dim);
+}
+.resume-download-item .contact-item-icon svg {
+  color: var(--gold);
+}
+.resume-download-item .contact-item-label,
+.resume-download-item .contact-item-value {
+  color: var(--gold);
+}
+.resume-download-item:hover {
+  background: var(--gold);
+}
+.resume-download-item:hover .contact-item-label,
+.resume-download-item:hover .contact-item-value {
+  color: var(--bg);
+}
+.resume-download-item:hover .contact-item-icon {
+  background: rgba(0,0,0,0.15);
+}
+.resume-download-item:hover .contact-item-icon svg {
+  color: var(--bg);
 }
 .contact-item-icon {
   width: 36px; height: 36px;
@@ -618,6 +665,10 @@ section {
   background: transparent;
   color: var(--gold);
   outline: 1px solid var(--gold);
+}
+.form-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 /* ── FOOTER ── */
