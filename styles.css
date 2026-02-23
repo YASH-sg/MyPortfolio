@@ -714,3 +714,48 @@ footer a:hover { color: var(--gold); }
   .exp-meta::after { display: none; }
   .exp-content { padding: 0.5rem 0 2rem; border-bottom: 1px solid var(--subtle); }
 }
+
+.about-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.about-photo-container {
+  position: relative;
+  max-width: 260px; /* Keeps the image from getting overwhelmingly large */
+}
+
+.profile-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  border: 1px solid var(--subtle);
+  position: relative;
+  z-index: 2;
+  /* Applies a cool black-and-white filter that reveals color on hover */
+  filter: grayscale(10%) contrast(1.1); 
+  transition: all 0.4s ease;
+  display: block;
+}
+
+.profile-photo:hover {
+  filter: grayscale(0%) contrast(1);
+  border-color: var(--gold);
+}
+
+/* The subtle gold accent box behind the image */
+.photo-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--gold-border);
+  border-radius: 4px;
+  transform: translate(12px, 12px);
+  z-index: 1;
+  transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.about-photo-container:hover .photo-backdrop {
+  transform: translate(8px, 8px);
+  border-color: var(--gold);
+}
